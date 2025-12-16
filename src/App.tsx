@@ -1,163 +1,211 @@
-import { useState } from 'react'
-import { cn } from '@/utils'
+import { Button, Container, Section, Card } from '@/components/ui'
 
-function TestCnUtility() {
-  const [isActive, setIsActive] = useState(true)
-  return (
-    <div
-      className={cn(
-        'p-4 rounded-lg cursor-pointer',
-        'bg-primary text-white',
-        isActive && 'font-bold'
-      )}
-      onClick={() => setIsActive(!isActive)}
-    >
-      Click me! cn() utility test (isActive: {isActive ? 'true' : 'false'})
-    </div>
-  )
-}
+// Arrow icon for button demo
+const ArrowRight = () => (
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M3 8H13M13 8L8 3M13 8L8 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+)
 
 function App() {
   return (
-    <div className="min-h-screen bg-white">
-      {/* Test Header */}
-      <header className="bg-primary text-white py-4 px-6">
-        <div className="max-w-[1100px] mx-auto">
-          <h1 className="text-2xl font-bold">Adapty Clone - Setup Test</h1>
-        </div>
+    <div className="min-h-screen bg-gray-100">
+      {/* Header */}
+      <header className="bg-primary text-white py-4 sticky top-0 z-50">
+        <Container>
+          <h1 className="text-2xl font-bold">Adapty Clone - UI Kit Test (Phase 2)</h1>
+        </Container>
       </header>
 
-      <main className="max-w-[1100px] mx-auto px-6 py-12">
-        {/* Test: Typography & Font */}
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold mb-4 text-gray-800">
-            1. Typography Test (Plus Jakarta Sans)
-          </h2>
-          <p className="text-lg text-gray-600 mb-2">
-            Regular text (400) - The quick brown fox jumps over the lazy dog
-          </p>
-          <p className="text-lg text-gray-600 font-medium mb-2">
-            Medium text (500) - The quick brown fox jumps over the lazy dog
-          </p>
-          <p className="text-lg text-gray-600 font-semibold mb-2">
-            Semibold text (600) - The quick brown fox jumps over the lazy dog
-          </p>
-          <p className="text-lg text-gray-600 font-bold">
-            Bold text (700) - The quick brown fox jumps over the lazy dog
-          </p>
-        </section>
+      {/* Button Section */}
+      <Section background="white" padding="lg">
+        <Container>
+          <h2 className="text-3xl font-bold mb-8 text-gray-800">1. Button Component</h2>
 
-        {/* Test: Colors */}
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold mb-4 text-gray-800">2. Colors Test</h2>
-          <div className="flex flex-wrap gap-4">
-            <div className="w-24 h-24 bg-primary rounded-lg flex items-center justify-center text-white text-xs">
-              Primary
-            </div>
-            <div className="w-24 h-24 bg-primary-hover rounded-lg flex items-center justify-center text-white text-xs">
-              Primary Hover
-            </div>
-            <div className="w-24 h-24 bg-gray-100 rounded-lg flex items-center justify-center text-gray-800 text-xs">
-              Gray 100
-            </div>
-            <div className="w-24 h-24 bg-gray-200 rounded-lg flex items-center justify-center text-gray-800 text-xs">
-              Gray 200
-            </div>
-            <div className="w-24 h-24 bg-gray-600 rounded-lg flex items-center justify-center text-white text-xs">
-              Gray 600
-            </div>
-            <div className="w-24 h-24 bg-aqua-600 rounded-lg flex items-center justify-center text-gray-800 text-xs">
-              Aqua 600
-            </div>
-            <div className="w-24 h-24 bg-black rounded-lg flex items-center justify-center text-white text-xs">
-              Black
+          {/* Variants */}
+          <div className="mb-8">
+            <h3 className="text-xl font-semibold mb-4 text-gray-600">Variants</h3>
+            <div className="flex flex-wrap gap-4">
+              <Button variant="primary">Primary</Button>
+              <Button variant="secondary">Secondary</Button>
+              <Button variant="outline">Outline</Button>
+              <Button variant="ghost">Ghost</Button>
             </div>
           </div>
-        </section>
 
-        {/* Test: Shadows */}
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold mb-4 text-gray-800">3. Shadows Test</h2>
-          <div className="flex flex-wrap gap-8">
-            <div className="w-32 h-32 bg-white shadow-sm rounded-lg flex items-center justify-center text-gray-600 text-xs">
-              Shadow SM
-            </div>
-            <div className="w-32 h-32 bg-white shadow-md rounded-lg flex items-center justify-center text-gray-600 text-xs">
-              Shadow MD
-            </div>
-            <div className="w-32 h-32 bg-white shadow-lg rounded-lg flex items-center justify-center text-gray-600 text-xs">
-              Shadow LG
-            </div>
-            <div className="w-32 h-32 bg-white shadow-primary rounded-lg flex items-center justify-center text-gray-600 text-xs">
-              Shadow Primary
+          {/* Sizes */}
+          <div className="mb-8">
+            <h3 className="text-xl font-semibold mb-4 text-gray-600">Sizes</h3>
+            <div className="flex flex-wrap items-center gap-4">
+              <Button size="sm">Small</Button>
+              <Button size="md">Medium</Button>
+              <Button size="lg">Large</Button>
             </div>
           </div>
-        </section>
 
-        {/* Test: Border Radius */}
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold mb-4 text-gray-800">4. Border Radius Test</h2>
-          <div className="flex flex-wrap gap-4">
-            <div className="w-24 h-24 bg-primary rounded-sm flex items-center justify-center text-white text-xs">
-              SM (8px)
-            </div>
-            <div className="w-24 h-24 bg-primary rounded-md flex items-center justify-center text-white text-xs">
-              MD (16px)
-            </div>
-            <div className="w-24 h-24 bg-primary rounded-lg flex items-center justify-center text-white text-xs">
-              LG (24px)
-            </div>
-            <div className="w-24 h-24 bg-primary rounded-full flex items-center justify-center text-white text-xs">
-              Full
+          {/* With Icons */}
+          <div className="mb-8">
+            <h3 className="text-xl font-semibold mb-4 text-gray-600">With Icons</h3>
+            <div className="flex flex-wrap gap-4">
+              <Button iconRight={<ArrowRight />}>Get Started</Button>
+              <Button variant="outline" iconRight={<ArrowRight />}>Learn More</Button>
+              <Button variant="secondary" iconLeft={<ArrowRight />}>Back</Button>
             </div>
           </div>
-        </section>
 
-        {/* Test: cn() utility */}
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold mb-4 text-gray-800">5. cn() Utility Test</h2>
-          <TestCnUtility />
-        </section>
-
-        {/* Test: Gradient Animation */}
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold mb-4 text-gray-800">6. Gradient Animation Test</h2>
-          <p className="text-gradient-animated text-5xl font-bold">
-            Animated Gradient Text
-          </p>
-        </section>
-
-        {/* Test: Responsive */}
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold mb-4 text-gray-800">7. Responsive Test</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="bg-gray-100 p-4 rounded-lg text-center">
-              <span className="md:hidden">Mobile</span>
-              <span className="hidden md:inline lg:hidden">Tablet</span>
-              <span className="hidden lg:inline">Desktop</span>
+          {/* States */}
+          <div className="mb-8">
+            <h3 className="text-xl font-semibold mb-4 text-gray-600">States</h3>
+            <div className="flex flex-wrap gap-4">
+              <Button disabled>Disabled</Button>
+              <Button isLoading>Loading</Button>
+              <Button fullWidth>Full Width Button</Button>
             </div>
-            <div className="bg-gray-100 p-4 rounded-lg text-center">Box 2</div>
-            <div className="bg-gray-100 p-4 rounded-lg text-center">Box 3</div>
-            <div className="bg-gray-100 p-4 rounded-lg text-center">Box 4</div>
           </div>
-        </section>
+        </Container>
+      </Section>
 
-        {/* Test Status */}
-        <section className="p-6 bg-green-100 rounded-lg border border-green-300">
-          <h2 className="text-2xl font-bold text-green-800 mb-2">✅ Setup Complete!</h2>
-          <p className="text-green-700">
-            If you can see this page with proper styling, Phase 1 is complete.
-          </p>
-          <ul className="mt-4 text-green-700 list-disc list-inside">
-            <li>Vite + React + TypeScript ✓</li>
-            <li>Tailwind CSS v4 ✓</li>
-            <li>Custom theme (colors, fonts, shadows) ✓</li>
-            <li>Google Fonts (Plus Jakarta Sans) ✓</li>
-            <li>Path aliases (@/) ✓</li>
-            <li>Utilities (cn, svgr) ✓</li>
-          </ul>
-        </section>
-      </main>
+      {/* Container Section */}
+      <Section background="light" padding="lg">
+        <Container>
+          <h2 className="text-3xl font-bold mb-8 text-gray-800">2. Container Component</h2>
+
+          <div className="space-y-6">
+            <div className="bg-primary/10 p-4 rounded-lg">
+              <p className="text-sm text-gray-600 mb-2">Default Container (max-w: 1100px)</p>
+              <div className="bg-primary h-4 rounded"></div>
+            </div>
+          </div>
+
+          <div className="mt-8">
+            <Container size="sm" className="bg-aqua-600 p-4 rounded-lg">
+              <p className="text-sm text-gray-600">Small Container (max-w: 800px)</p>
+            </Container>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Section Component */}
+      <Section background="white" padding="md">
+        <Container>
+          <h2 className="text-3xl font-bold mb-4 text-gray-800">3. Section Component</h2>
+          <p className="text-gray-600">This is a white section with medium padding</p>
+        </Container>
+      </Section>
+
+      <Section background="aqua" padding="md">
+        <Container>
+          <p className="text-gray-800 font-semibold">Aqua background section</p>
+        </Container>
+      </Section>
+
+      <Section background="dark" padding="md">
+        <Container>
+          <p className="text-white font-semibold">Dark background section</p>
+        </Container>
+      </Section>
+
+      {/* Card Section */}
+      <Section background="light" padding="lg">
+        <Container>
+          <h2 className="text-3xl font-bold mb-8 text-gray-800">4. Card Component</h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card variant="default">
+              <h3 className="font-semibold mb-2">Default Card</h3>
+              <p className="text-gray-600 text-sm">With border and white background</p>
+            </Card>
+
+            <Card variant="outline">
+              <h3 className="font-semibold mb-2">Outline Card</h3>
+              <p className="text-gray-600 text-sm">Transparent with border</p>
+            </Card>
+
+            <Card variant="elevated">
+              <h3 className="font-semibold mb-2">Elevated Card</h3>
+              <p className="text-gray-600 text-sm">With shadow, no border</p>
+            </Card>
+
+            <Card variant="default" hoverable>
+              <h3 className="font-semibold mb-2">Hoverable Card</h3>
+              <p className="text-gray-600 text-sm">Hover me for effect!</p>
+            </Card>
+          </div>
+
+          {/* Card sizes */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+            <Card padding="sm" rounded="sm">
+              <p className="text-sm">Small padding, small rounded</p>
+            </Card>
+            <Card padding="md" rounded="md">
+              <p className="text-sm">Medium padding, medium rounded</p>
+            </Card>
+            <Card padding="lg" rounded="lg">
+              <p className="text-sm">Large padding, large rounded</p>
+            </Card>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Combined Example */}
+      <Section background="white" padding="xl">
+        <Container>
+          <h2 className="text-3xl font-bold mb-8 text-gray-800">5. Combined Example</h2>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <Card variant="default" hoverable padding="lg">
+              <div className="text-4xl mb-4">🚀</div>
+              <h3 className="text-xl font-bold mb-2">Quick Setup</h3>
+              <p className="text-gray-600 mb-4">
+                Get started in minutes with our simple SDK integration.
+              </p>
+              <Button variant="primary" size="sm" iconRight={<ArrowRight />}>
+                Learn More
+              </Button>
+            </Card>
+
+            <Card variant="default" hoverable padding="lg">
+              <div className="text-4xl mb-4">📊</div>
+              <h3 className="text-xl font-bold mb-2">Analytics</h3>
+              <p className="text-gray-600 mb-4">
+                Track your revenue and subscription metrics in real-time.
+              </p>
+              <Button variant="outline" size="sm" iconRight={<ArrowRight />}>
+                View Demo
+              </Button>
+            </Card>
+
+            <Card variant="default" hoverable padding="lg">
+              <div className="text-4xl mb-4">🔒</div>
+              <h3 className="text-xl font-bold mb-2">Secure</h3>
+              <p className="text-gray-600 mb-4">
+                Enterprise-grade security for your subscription data.
+              </p>
+              <Button variant="ghost" size="sm" iconRight={<ArrowRight />}>
+                Read More
+              </Button>
+            </Card>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Status Section */}
+      <Section background="white" padding="lg">
+        <Container>
+          <Card variant="default" className="bg-green-50 border-green-200">
+            <h2 className="text-2xl font-bold text-green-800 mb-2">✅ Phase 2 Complete!</h2>
+            <p className="text-green-700 mb-4">
+              UI Kit components are ready for use.
+            </p>
+            <ul className="text-green-700 list-disc list-inside space-y-1">
+              <li>Button (4 variants, 3 sizes, icons, states) ✓</li>
+              <li>Container (5 sizes, responsive padding) ✓</li>
+              <li>Section (5 backgrounds, 5 paddings) ✓</li>
+              <li>Card (4 variants, 3 paddings, 3 rounded, hoverable) ✓</li>
+            </ul>
+          </Card>
+        </Container>
+      </Section>
     </div>
   )
 }
