@@ -1,0 +1,7 @@
+export { Hero } from './Hero'
+export { TrustedBy } from './TrustedBy'
+export { Features } from './Features'
+export { Stats } from './Stats'
+export { Integrations } from './Integrations'
+export { Pricing } from './Pricing'
+export { CTA } from './CTA'
