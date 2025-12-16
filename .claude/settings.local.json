@@ -14,7 +14,11 @@
       "Bash(npx tailwindcss:*)",
       "Bash(npm run build:*)",
       "Bash(npm run test:all:*)",
-      "Bash(vercel --version:*)"
+      "Bash(vercel --version:*)",
+      "Bash(chmod:*)",
+      "Bash(./scripts/download-images.sh:*)",
+      "Bash(find:*)",
+      "Bash(curl:*)"
     ]
   }
 }

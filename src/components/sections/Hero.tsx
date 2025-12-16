@@ -66,16 +66,20 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Right column - Hero Image placeholder */}
+          {/* Right column - Hero Images */}
           <div className="relative">
-            <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-3xl p-8 aspect-square flex items-center justify-center">
-              {/* Phone mockup placeholder */}
-              <div className="relative w-48 h-96 bg-black rounded-[3rem] p-2 shadow-2xl">
-                <div className="w-full h-full bg-gradient-to-b from-primary/20 to-primary/40 rounded-[2.5rem] flex items-center justify-center">
-                  <span className="text-white/60 text-sm">App Preview</span>
-                </div>
-              </div>
-            </div>
+            {/* Main dashboard image */}
+            <img
+              src="/images/hero/adapty-overview.webp"
+              alt="Adapty Dashboard Overview"
+              className="rounded-2xl shadow-2xl w-full"
+            />
+            {/* Floating paywall preview */}
+            <img
+              src="/images/hero/paywall-demo.webp"
+              alt="Paywall Demo"
+              className="absolute -bottom-8 -left-8 w-48 rounded-xl shadow-xl border-4 border-white hidden md:block"
+            />
           </div>
         </div>
       </Container>

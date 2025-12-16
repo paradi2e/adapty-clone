@@ -22,13 +22,13 @@ const ArrowRight = () => (
   </svg>
 )
 
-// SDK platforms
+// SDK platforms with icons
 const platforms = [
-  { name: 'Swift', color: 'bg-orange-100 text-orange-600' },
-  { name: 'Kotlin', color: 'bg-purple-100 text-purple-600' },
-  { name: 'React Native', color: 'bg-blue-100 text-blue-600' },
-  { name: 'Flutter', color: 'bg-cyan-100 text-cyan-600' },
-  { name: 'Unity', color: 'bg-gray-100 text-gray-600' },
+  { name: 'Swift', icon: '/images/sdk/swift.svg' },
+  { name: 'Kotlin', icon: '/images/sdk/kotlin.svg' },
+  { name: 'React Native', icon: '/images/sdk/react-native.svg' },
+  { name: 'Flutter', icon: '/images/sdk/flutter.svg' },
+  { name: 'Unity', icon: '/images/sdk/unity.svg' },
 ]
 
 interface FeatureSectionProps {
@@ -130,22 +130,27 @@ do {
       <section className="py-8 bg-gray-50">
         <Container>
           <p className="text-center text-gray-600 mb-6">Get the SDK for your platform</p>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-6">
             {platforms.map((platform) => (
-              <span
+              <div
                 key={platform.name}
-                className={cn(
-                  'px-4 py-2 rounded-lg font-medium text-sm cursor-pointer hover:scale-105 transition-transform',
-                  platform.color
-                )}
+                className="flex flex-col items-center gap-2 cursor-pointer hover:scale-105 transition-transform"
               >
-                {platform.name}
-              </span>
+                <img
+                  src={platform.icon}
+                  alt={platform.name}
+                  className="w-12 h-12"
+                />
+                <span className="text-sm text-gray-600">{platform.name}</span>
+              </div>
             ))}
           </div>
-          <div className="flex justify-center gap-4 mt-6">
+          <div className="flex justify-center items-center gap-4 mt-6">
             <span className="text-sm text-gray-500">100% Open Source</span>
-            <a href="#" className="text-sm text-primary hover:underline">Go to GitHub</a>
+            <a href="#" className="text-sm text-primary hover:underline flex items-center gap-1">
+              <img src="/images/logos/github.svg" alt="GitHub" className="w-4 h-4" />
+              Go to GitHub
+            </a>
           </div>
         </Container>
       </section>

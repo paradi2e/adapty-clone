@@ -1,14 +1,14 @@
 import { Container } from '@/components/ui/Container'
 
-// Company logos - text placeholders matching original
+// Company logos with actual images
 const companies = [
-  'FEELD',
-  'Buildship',
-  'WHATNOT',
-  'Babbel',
-  'JustAI',
-  'myposter.de',
-  'HUBX',
+  { name: 'Feeld', logo: '/images/logos/feeld.svg' },
+  { name: 'Bumble', logo: '/images/logos/bumble.svg' },
+  { name: 'Weewoo', logo: '/images/logos/weewoo.svg' },
+  { name: 'AppNation', logo: '/images/logos/appnation.webp' },
+  { name: 'Almus', logo: '/images/logos/almus.svg' },
+  { name: 'Impala Studios', logo: '/images/logos/impala-studios.svg' },
+  { name: 'HUBX', logo: '/images/logos/hubx.svg' },
 ]
 
 export function TrustedBy() {
@@ -21,12 +21,12 @@ export function TrustedBy() {
 
         <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
           {companies.map((company) => (
-            <span
-              key={company}
-              className="text-gray-400 hover:text-gray-600 transition-colors font-semibold text-lg grayscale hover:grayscale-0 cursor-pointer"
-            >
-              {company}
-            </span>
+            <img
+              key={company.name}
+              src={company.logo}
+              alt={company.name}
+              className="h-6 md:h-8 w-auto grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all cursor-pointer"
+            />
           ))}
         </div>
       </Container>
