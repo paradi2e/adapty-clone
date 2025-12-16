@@ -274,7 +274,7 @@
 |------|--------|-----------|
 | 0. Git репозиторий | ✅ Готово | 100% |
 | 1. Настройка проекта | ✅ Готово | 100% |
-| 2. UI компоненты | ⏳ Ожидает | 0% |
+| 2. UI компоненты | ✅ Готово | 100% |
 | 3. Layout компоненты | ⏳ Ожидает | 0% |
 | 4. Секции страницы | ⏳ Ожидает | 0% |
 | 5. Assets | ⏳ Ожидает | 0% |
@@ -283,26 +283,22 @@
 | 8. Полировка | ⏳ Ожидает | 0% |
 | 9. Деплой | ⏳ Ожидает | 0% |
 
-**Общий прогресс:** ~20%
+**Общий прогресс:** ~30%
 
 ---
 
 ## Следующий шаг
 
-**Фаза 2:** UI компоненты (Button, Container, Section, Card)
-
-```bash
-# Запустить dev server для визуального тестирования
-npm run dev
-
-# Открыть http://localhost:5173
-```
+**Фаза 3:** Layout компоненты (Header, Footer, MobileMenu)
 
 ### Компоненты к созданию:
-1. Button (primary, secondary, outline, ghost)
-2. Container (max-width wrapper)
-3. Section (background variants)
-4. Card (border, shadow, hover)
+1. Header (logo, nav, dropdown меню, actions)
+2. MobileMenu (hamburger, slide-in)
+3. Footer (CTA, nav grid, socials)
+
+```bash
+npm run dev
+```
 
 ---
 
@@ -333,3 +329,4 @@ npm run dev
 | 2025-12-16 | Решены вопросы: dropdown (работающие), изображения (скриншоты) |
 | 2025-12-16 | ✅ Фаза 0 завершена: Git + GitHub репозиторий создан |
 | 2025-12-16 | ✅ Фаза 1 завершена: Vite + React + Tailwind v4 настроены |
+| 2025-12-16 | ✅ Фаза 2 завершена: UI Kit (Button, Container, Section, Card) |
