@@ -23,47 +23,60 @@ const ArrowRight = () => (
 
 export function Hero() {
   return (
-    <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
-      {/* Background gradient decoration */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-gradient-to-b from-primary/5 to-transparent rounded-full blur-3xl" />
-      </div>
+    <section className="relative pt-8 pb-16 md:pt-12 md:pb-24 overflow-hidden">
+      {/* Ebook banner */}
+      <Container>
+        <div className="flex justify-center mb-8">
+          <a
+            href="#"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-full text-sm font-medium text-gray-700 transition-colors"
+          >
+            <span className="text-primary">Ebook</span>
+            <span>$100K playbook | download</span>
+            <ArrowRight />
+          </a>
+        </div>
+      </Container>
 
       <Container>
-        <div className="text-center max-w-4xl mx-auto">
-          {/* Main Heading */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
-            The best solution to grow mobile{' '}
-            <span className="text-gradient-animated">in-app purchases</span>
-          </h1>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left column - Text */}
+          <div>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+              <span className="text-primary">Revenue</span>
+              <br />
+              <span className="text-primary">management</span>
+              <br />
+              for in-app
+              <br />
+              purchases
+            </h1>
 
-          {/* Subtitle */}
-          <p className="text-lg sm:text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Adapty helps you maximize mobile app revenue with powerful paywall builder,
-            real-time analytics, and A/B testing tools.
-          </p>
+            <p className="text-lg text-gray-600 mb-8 max-w-lg">
+              Save months on integrating subscriptions and double your app revenue with paywall management.
+            </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button
-              size="lg"
-              iconRight={<ArrowRight />}
-              className="group shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-shadow"
-            >
-              Start for Free
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-            >
-              Schedule Demo
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button
+                size="lg"
+                className="group shadow-lg shadow-primary/25"
+              >
+                Book a demo
+              </Button>
+            </div>
           </div>
 
-          {/* Trust badge */}
-          <p className="mt-8 text-sm text-gray-500">
-            No credit card required • Free trial • Cancel anytime
-          </p>
+          {/* Right column - Hero Image placeholder */}
+          <div className="relative">
+            <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-3xl p-8 aspect-square flex items-center justify-center">
+              {/* Phone mockup placeholder */}
+              <div className="relative w-48 h-96 bg-black rounded-[3rem] p-2 shadow-2xl">
+                <div className="w-full h-full bg-gradient-to-b from-primary/20 to-primary/40 rounded-[2.5rem] flex items-center justify-center">
+                  <span className="text-white/60 text-sm">App Preview</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </Container>
     </section>

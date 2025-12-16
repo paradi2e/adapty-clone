@@ -2,10 +2,12 @@ import { Header, Footer } from '@/components/layout'
 import {
   Hero,
   TrustedBy,
-  Features,
+  HelpTeam,
   Stats,
-  Integrations,
-  Pricing,
+  Features,
+  Testimonials,
+  Enterprise,
+  Cases,
   CTA,
 } from '@/components/sections'
 
@@ -18,13 +20,15 @@ function App() {
       {/* Spacer for fixed header */}
       <div className="h-16" />
 
-      {/* Page Sections */}
+      {/* Page Sections - matching adapty.io order */}
       <Hero />
       <TrustedBy />
-      <Features />
+      <HelpTeam />
       <Stats />
-      <Integrations />
-      <Pricing />
+      <Features />
+      <Testimonials />
+      <Enterprise />
+      <Cases />
       <CTA />
 
       {/* Footer */}

@@ -1,34 +1,32 @@
 import { Container } from '@/components/ui/Container'
 
-// Company logos - using text placeholders that will be replaced with actual logos
+// Company logos - text placeholders matching original
 const companies = [
-  { name: 'JEFIT', href: '#' },
-  { name: 'Mimo', href: '#' },
-  { name: 'Lifesum', href: '#' },
-  { name: 'VSCO', href: '#' },
-  { name: 'Babbel', href: '#' },
-  { name: 'Mojo', href: '#' },
-  { name: 'Rootd', href: '#' },
-  { name: 'Soulver', href: '#' },
+  'FEELD',
+  'Buildship',
+  'WHATNOT',
+  'Babbel',
+  'JustAI',
+  'myposter.de',
+  'HUBX',
 ]
 
 export function TrustedBy() {
   return (
-    <section className="py-12 md:py-16 border-y border-gray-100">
+    <section className="py-8 border-b border-gray-100">
       <Container>
-        <p className="text-center text-sm text-gray-500 mb-8">
-          Trusted by leading mobile apps worldwide
+        <p className="text-center text-sm text-gray-500 mb-6">
+          Trusted by 15,000+ apps and the world's largest app publishers
         </p>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-8 items-center justify-items-center">
+        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
           {companies.map((company) => (
-            <a
-              key={company.name}
-              href={company.href}
-              className="text-gray-400 hover:text-gray-600 transition-colors font-semibold text-lg grayscale hover:grayscale-0"
+            <span
+              key={company}
+              className="text-gray-400 hover:text-gray-600 transition-colors font-semibold text-lg grayscale hover:grayscale-0 cursor-pointer"
             >
-              {company.name}
-            </a>
+              {company}
+            </span>
           ))}
         </div>
       </Container>

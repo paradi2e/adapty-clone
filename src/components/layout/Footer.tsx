@@ -1,46 +1,112 @@
 import { cn } from '@/utils'
-import { Button } from '@/components/ui/Button'
 import { Container } from '@/components/ui/Container'
 import { LogoText } from '@/components/ui/Logo'
 
-// Footer navigation structure
+// Footer navigation structure matching original
 const footerNav = [
   {
-    title: 'Product',
+    title: 'Paywall management',
     links: [
-      { label: 'Paywall Builder', href: '#' },
-      { label: 'A/B Testing', href: '#' },
-      { label: 'Analytics', href: '#' },
-      { label: 'Integrations', href: '#' },
-      { label: 'Pricing', href: '#' },
+      'Paywall builder',
+      'Onboarding builder',
+      'AI generator',
+      'A/B testing',
+      'Autopilot',
+      'Targeting',
+      'Localization',
+      'Remote config',
+    ],
+  },
+  {
+    title: 'Infrastructure',
+    links: [
+      'Subscription SDK',
+      'Subscriber sync',
+      'Fallback paywalls',
+      'Refund saver',
+      'Integrations',
+      'Roles',
+    ],
+  },
+  {
+    title: 'For developers',
+    links: ['Integrate subscriptions'],
+  },
+  {
+    title: 'For marketers',
+    links: ['Grow app revenue'],
+  },
+  {
+    title: 'For app owners',
+    links: ['Analyze performance'],
+  },
+  {
+    title: 'Stages',
+    links: ['Indie', 'Startups', 'Publishers', 'Enterprise'],
+  },
+  {
+    title: 'Cases',
+    links: ['Read our cases'],
+  },
+  {
+    title: 'Migrate from',
+    links: ['RevenueCat', 'Purchasely', 'Qonversion', 'Superwall'],
+  },
+  {
+    title: 'SDK',
+    links: [
+      'iOS',
+      'Android',
+      'React Native',
+      'Flutter',
+      'FlutterFlow',
+      'Kotlin Multiplatform',
+      'Capacitor',
+      'Unity',
+      'Stripe',
     ],
   },
   {
     title: 'Resources',
     links: [
-      { label: 'Documentation', href: '#' },
-      { label: 'Blog', href: '#' },
-      { label: 'Guides', href: '#' },
-      { label: 'Case Studies', href: '#' },
-      { label: 'Changelog', href: '#' },
+      'Blog',
+      'Ebooks',
+      'Podcast',
+      'Webinars',
+      'Events',
+      'Glossary',
+      'Documentation',
+      'Paywall library',
+      'LTV prediction model',
+      'Apple fiscal calendar',
+      'Apple receipt checker',
+      'Subscription calculator',
+      'Refund saver calculator',
+      'In-app subscription reports',
+      'Community',
+    ],
+  },
+  {
+    title: 'Analytics',
+    links: [
+      'Revenue analytics',
+      'LTV analytics',
+      'AI predictive analytics',
+      'Apple ads manager',
     ],
   },
   {
     title: 'Company',
     links: [
-      { label: 'About', href: '#' },
-      { label: 'Careers', href: '#' },
-      { label: 'Contact', href: '#' },
-      { label: 'Press', href: '#' },
-    ],
-  },
-  {
-    title: 'Legal',
-    links: [
-      { label: 'Privacy Policy', href: '#' },
-      { label: 'Terms of Service', href: '#' },
-      { label: 'Cookie Policy', href: '#' },
-      { label: 'GDPR', href: '#' },
+      'About us',
+      'Contact us',
+      'Careers',
+      'Terms',
+      'Privacy policy',
+      'Data protection',
+      'System status',
+      'SOC2 compliance',
+      'Become a partner',
     ],
   },
 ]
@@ -88,58 +154,23 @@ function YouTubeIcon({ className }: { className?: string }) {
 export function Footer() {
   return (
     <footer className="bg-black text-white">
-      {/* CTA Section */}
-      <div className="border-b border-white/10">
-        <Container>
-          <div className="py-16 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Ready to grow your subscription revenue?
-            </h2>
-            <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
-              Start building better monetization today with Adapty's powerful tools.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="primary" size="lg">
-                Get Started Free
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-white/20 text-white hover:bg-white/10"
-              >
-                Schedule Demo
-              </Button>
-            </div>
-          </div>
-        </Container>
-      </div>
-
       {/* Navigation Grid */}
       <Container>
-        <div className="py-12 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
-          {/* Logo & Description */}
-          <div className="col-span-2 md:col-span-4 lg:col-span-1 mb-8 lg:mb-0">
-            <LogoText variant="white" className="mb-4" />
-            <p className="text-gray-400 text-sm">
-              The best solution to grow mobile in-app purchases.
-            </p>
-          </div>
-
-          {/* Nav Columns */}
-          {footerNav.map((column) => (
+        <div className="py-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8">
+          {footerNav.slice(0, 12).map((column) => (
             <div key={column.title}>
-              <h3 className="font-semibold text-white mb-4">{column.title}</h3>
-              <ul className="space-y-3">
-                {column.links.map((link) => (
-                  <li key={link.label}>
+              <h3 className="font-semibold text-white text-sm mb-3">{column.title}</h3>
+              <ul className="space-y-2">
+                {column.links.slice(0, 6).map((link) => (
+                  <li key={link}>
                     <a
-                      href={link.href}
+                      href="#"
                       className={cn(
-                        'text-gray-400 text-sm',
+                        'text-gray-400 text-xs',
                         'hover:text-white transition-colors'
                       )}
                     >
-                      {link.label}
+                      {link}
                     </a>
                   </li>
                 ))}
@@ -153,23 +184,29 @@ export function Footer() {
       <div className="border-t border-white/10">
         <Container>
           <div className="py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-            {/* Copyright */}
-            <p className="text-gray-500 text-sm">
-              © {new Date().getFullYear()} Adapty Tech Inc. All rights reserved.
-            </p>
-
-            {/* Social Links */}
+            {/* Logo & Copyright */}
             <div className="flex items-center gap-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.href}
-                  className="text-gray-400 hover:text-primary transition-colors"
-                  aria-label={social.name}
-                >
-                  <social.icon />
-                </a>
-              ))}
+              <LogoText variant="white" />
+              <p className="text-gray-500 text-sm">
+                © {new Date().getFullYear()} Adapty Tech Inc.
+              </p>
+            </div>
+
+            {/* Language & Social Links */}
+            <div className="flex items-center gap-6">
+              <span className="text-gray-400 text-sm">English</span>
+              <div className="flex items-center gap-4">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    className="text-gray-400 hover:text-white transition-colors"
+                    aria-label={social.name}
+                  >
+                    <social.icon />
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </Container>
