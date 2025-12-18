@@ -4,11 +4,8 @@ import {
   TrustedBy,
   HelpTeam,
   Stats,
+  CodeSection,
   Features,
-  Testimonials,
-  Enterprise,
-  Cases,
-  CTA,
 } from '@/components/sections'
 
 function App() {
@@ -25,13 +22,10 @@ function App() {
       <TrustedBy />
       <HelpTeam />
       <Stats />
+      <CodeSection />
       <Features />
-      <Testimonials />
-      <Enterprise />
-      <Cases />
-      <CTA />
 
-      {/* Footer */}
+      {/* Footer (includes CTA section) */}
       <Footer />
     </div>
   )
