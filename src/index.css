@@ -90,19 +90,45 @@ img, picture, video, canvas, svg {
   max-width: 100%;
 }
 
-/* Gradient Animation for text */
-@keyframes gradient-shift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+/* Gradient Animation for text - matching adapty.io */
+@keyframes AnimatedGradientBgLeft {
+  0% { background-position: 0% 100%; }
+  100% { background-position: 75% 100%; }
 }
 
 .text-gradient-animated {
-  background: linear-gradient(130deg, #0D93F2, #6720FF, #9C51D5);
-  background-size: 600% 600%;
+  background: linear-gradient(
+    130deg,
+    rgba(13, 147, 242, 1),
+    rgba(103, 32, 255, 1),
+    rgba(156, 81, 213, 1),
+    rgba(13, 147, 242, 1),
+    rgba(103, 32, 255, 1),
+    rgba(156, 81, 213, 1)
+  );
+  background-size: 600% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: gradient-shift 15s ease infinite;
+  animation: AnimatedGradientBgLeft 15s linear infinite;
+  animation-delay: -4.5s;
+}
+
+/* Orange-red gradient for web2app */
+.text-gradient-orange {
+  background: linear-gradient(
+    130deg,
+    rgba(255, 107, 107, 1),
+    rgba(255, 146, 43, 1),
+    rgba(255, 107, 107, 1),
+    rgba(255, 146, 43, 1)
+  );
+  background-size: 600% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: AnimatedGradientBgLeft 15s linear infinite;
+  animation-delay: -4.5s;
 }
 
 /* Fade In Animation */

@@ -1,15 +1,17 @@
 import { cn } from '@/utils'
 
 export interface LogoProps {
-  variant?: 'color' | 'white'
+  variant?: 'color' | 'white' | 'black'
   className?: string
 }
 
 // Using actual Adapty logo images
-export function Logo({ variant = 'color', className }: LogoProps) {
+export function Logo({ variant = 'black', className }: LogoProps) {
   const logoSrc = variant === 'white'
-    ? '/images/logos/adapty-logo-white.svg'
-    : '/images/logos/adapty-logo-color.svg'
+    ? '/images/logos/adapty-white.svg'
+    : variant === 'color'
+    ? '/images/logos/adapty-color.svg'
+    : '/images/logos/adapty-black.svg'
 
   return (
     <img
@@ -20,10 +22,12 @@ export function Logo({ variant = 'color', className }: LogoProps) {
   )
 }
 
-export function LogoText({ variant = 'color', className }: LogoProps) {
+export function LogoText({ variant = 'black', className }: LogoProps) {
   const logoSrc = variant === 'white'
-    ? '/images/logos/adapty-logo-white.svg'
-    : '/images/logos/adapty-logo-color.svg'
+    ? '/images/logos/adapty-white.svg'
+    : variant === 'color'
+    ? '/images/logos/adapty-color.svg'
+    : '/images/logos/adapty-black.svg'
 
   return (
     <img

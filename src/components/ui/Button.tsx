@@ -29,10 +29,10 @@ const variantStyles = {
     'active:bg-gray-250',
   ],
   outline: [
-    'bg-transparent text-gray-800',
-    'border border-gray-250',
-    'hover:border-gray-500 hover:text-gray-800',
-    'active:bg-gray-100',
+    'bg-transparent text-primary',
+    'border border-primary',
+    'hover:bg-primary/5',
+    'active:bg-primary/10',
   ],
   ghost: [
     'bg-transparent text-gray-600',
