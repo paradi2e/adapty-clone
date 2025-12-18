@@ -1,0 +1,26 @@
+import type { Integration } from './types'
+
+export const integrations: Integration[] = [
+  { name: 'Airbridge', logo: '/images/integrations/airbridge.svg' },
+  { name: 'Adjust', logo: '/images/integrations/adjust.svg' },
+  { name: 'Amazon S3', logo: '/images/integrations/amazon-s3.svg' },
+  { name: 'Amplitude', logo: '/images/integrations/amplitude.svg' },
+  { name: 'Apple Ads', logo: '/images/integrations/apple-ads.svg' },
+  { name: 'AppsFlyer', logo: '/images/integrations/appsflyer.svg' },
+  { name: 'AppMetrica', logo: '/images/integrations/appmetrica.svg' },
+  { name: 'Asapty', logo: '/images/integrations/asapty.svg' },
+  { name: 'Branch', logo: '/images/integrations/branch.svg' },
+  { name: 'Braze', logo: '/images/integrations/braze.svg' },
+  { name: 'Facebook', logo: '/images/integrations/facebook.svg' },
+  { name: 'Firebase', logo: '/images/integrations/firebase.svg' },
+  { name: 'Google Cloud', logo: '/images/integrations/google-cloud.svg' },
+  { name: 'Mixpanel', logo: '/images/integrations/mixpanel.svg' },
+  { name: 'OneSignal', logo: '/images/integrations/onesignal.svg' },
+  { name: 'PostHog', logo: '/images/integrations/posthog.svg' },
+  { name: 'Pushwoosh', logo: '/images/integrations/pushwoosh.svg' },
+  { name: 'Acquire', logo: '/images/integrations/acquire.svg' },
+  { name: 'Singular', logo: '/images/integrations/singular.svg' },
+  { name: 'Stripe', logo: '/images/integrations/stripe.svg' },
+  { name: 'Tenjin', logo: '/images/integrations/tenjin.svg' },
+  { name: 'Webhooks', logo: '/images/integrations/webhooks.svg' },
+]
