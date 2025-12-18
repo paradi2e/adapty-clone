@@ -24,7 +24,7 @@ const cases = [
   {
     company: 'Going Merry',
     category: 'App publisher',
-    result: '5x MRR growth',
+    result: '5× MRR growth',
     title: 'How to scale subscription revenue with Paywall Builder',
   },
   {
@@ -71,41 +71,49 @@ function CaseCard({ company, category, result, title }: CaseCardProps) {
     <a
       href="#"
       className={cn(
-        'block bg-white rounded-2xl p-6 border border-gray-200',
-        'hover:border-primary/20 hover:shadow-lg transition-all group'
+        'block bg-white rounded-xl p-5 border border-gray-200',
+        'hover:border-primary/30 hover:shadow-md transition-all group'
       )}
     >
-      <div className="mb-4">
+      <div className="mb-3">
         <p className="text-sm font-medium text-gray-900">{company}</p>
         <p className="text-xs text-gray-500">{category}</p>
       </div>
-      <p className="text-primary font-semibold mb-2">{result}</p>
-      <p className="text-gray-600 text-sm group-hover:text-gray-900 transition-colors">
+      <p className="text-primary font-semibold text-sm mb-2">{result}</p>
+      <p className="text-gray-600 text-sm leading-relaxed mb-3">
         {title}
       </p>
-      <p className="text-primary text-sm mt-4 group-hover:underline">Read more</p>
+      <span className="text-primary text-sm font-medium group-hover:underline inline-flex items-center gap-1">
+        Read more
+        <svg width="12" height="12" viewBox="0 0 16 16" fill="none" className="transition-transform group-hover:translate-x-0.5">
+          <path d="M3 8H13M13 8L8 3M13 8L8 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </span>
     </a>
   )
 }
 
 export function Cases() {
   return (
-    <section className="py-16 md:py-24 bg-gray-50">
+    <section className="py-16 md:py-20 bg-gray-50">
       <Container>
-        <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+        {/* Section header */}
+        <div className="text-center mb-10">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
             Read the real cases of our customers
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Cases grid - 3x3 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {cases.map((caseItem) => (
             <CaseCard key={caseItem.company} {...caseItem} />
           ))}
         </div>
 
+        {/* Read all button */}
         <div className="text-center mt-8">
-          <Button variant="outline">
+          <Button variant="outline" size="md">
             Read all cases
           </Button>
         </div>
