@@ -487,3 +487,71 @@ components/sections/
 - Keyboard navigation support
 - Focus states для всех интерактивных элементов
 - Color contrast ratio > 4.5:1
+
+---
+
+## Прогресс реализации (2025-12-17)
+
+### Завершённые секции
+
+| Секция | Статус | Описание |
+|--------|--------|----------|
+| Header | ✅ Done | Мега-меню с табами, dropdown, мобильное меню |
+| Hero | ✅ Done | Анимированный градиент, форма email, изображения с adapty.io |
+| TrustedBy | ✅ Done | Логотипы компаний на кремовом фоне |
+| HelpTeam | ✅ Done | Секция "Help your team" с карточками |
+| Stats | ✅ Done | Метрики и статистика |
+| CodeSection | ✅ Done | Редактор кода с табами (Swift, Kotlin, React Native, Flutter, Unity), подсветка синтаксиса, testimonial |
+| Features | ✅ Done | 7 feature-секций с testimonials |
+| Testimonials | 🚧 In Progress | Секция с отзывами клиентов |
+| Enterprise | 🚧 In Progress | Enterprise секция |
+| Cases | 🚧 In Progress | Case studies |
+| CTA | 🚧 In Progress | Call-to-action секция |
+| Footer | ✅ Done | Навигация, соц. сети, copyright |
+
+### Features секции (детально)
+
+| Секция | Layout | Фон изображения | Testimonial |
+|--------|--------|-----------------|-------------|
+| Increase subscription revenue | Text LEFT / Image RIGHT | #234646 (dark green) | Smartist / Ilgar Tali |
+| Cut refund rate by 40% | Image LEFT / Text RIGHT | #d4e8e3 (mint) | Fotorama / Berk Çağatay |
+| Know your subscription numbers | Text LEFT / Image RIGHT | #e8e4f3 (light purple) | Moonly / Nikolay Chebotarev |
+| No-code paywall builder | Image LEFT / Text RIGHT | #f8d4d4 (pink) | Moodworks / Mike McSweeney |
+| Boost app revenue with web funnels | Text LEFT / Image RIGHT | #f5f5f5 (light gray) | — |
+| Sync purchase data | Text LEFT / Grid RIGHT | #3d8b8b (teal) | Bickster / Chris Bick |
+
+### Скачанные изображения
+
+**public/images/features/**
+- paywall-ab-testing.webp - A/B тестирование пейволлов
+- refund-rate.webp - График refund rate
+- subscription-bi.webp - Dashboard аналитики
+- paywall-builder.webp - No-code builder
+- funnelfox.webp - FunnelFox интерфейс
+- smartist-logo.png, ilgar-tali.webp
+- fotorama-icon.webp, berk-cagatay.webp
+- moonly-icon.svg, nikolay-chebotarev.png
+- moodworks-logo.webp, mike-mcsweeney.webp
+- bickster-logo.png, chris-bick.webp
+
+### Технические решения
+
+1. **Кавычки, разрывающие рамку testimonial:**
+   ```tsx
+   <div className="absolute -top-5 left-6 bg-white px-2">
+     <span className="text-4xl text-gray-300 font-serif">"</span>
+   </div>
+   ```
+
+2. **Grid layout для Features:**
+   - Text LEFT: `lg:grid-cols-[380px_1fr]`
+   - Image LEFT: `lg:grid-cols-[1fr_380px]`
+
+3. **Hover эффект на ссылках:**
+   ```tsx
+   className="hover:text-primary transition-colors"
+   ```
+
+4. **Подсветка синтаксиса в CodeSection:**
+   - React компонент `HighlightedLine` вместо `dangerouslySetInnerHTML`
+   - Парсинг токенов: keywords, strings, class names, methods, variables
