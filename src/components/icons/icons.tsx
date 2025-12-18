@@ -103,3 +103,62 @@ export function StarIcon({ className }: IconProps) {
     </svg>
   )
 }
+
+// UI icons
+export function MenuIcon({ className }: IconProps) {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className={className}>
+      <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+    </svg>
+  )
+}
+
+export function CloseIcon({ className }: IconProps) {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className={className}>
+      <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+    </svg>
+  )
+}
+
+export function CopyIcon({ className }: IconProps) {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className}>
+      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+    </svg>
+  )
+}
+
+export function CheckIcon({ className }: IconProps) {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className}>
+      <polyline points="20 6 9 17 4 12"/>
+    </svg>
+  )
+}
+
+export function ExternalLinkIcon({ className }: IconProps) {
+  return (
+    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className={className}>
+      <path d="M3.5 8.5L8.5 3.5M8.5 3.5H4M8.5 3.5V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  )
+}
+
+// Small chevron for navigation
+export function ChevronRightSmallIcon({ className }: IconProps) {
+  return (
+    <svg width="6" height="10" viewBox="0 0 6 10" fill="none" className={className}>
+      <path d="M1 1L5 5L1 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  )
+}
+
+export function ChevronDownSmallIcon({ className }: IconProps) {
+  return (
+    <svg width="10" height="6" viewBox="0 0 10 6" fill="none" className={className}>
+      <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  )
+}
